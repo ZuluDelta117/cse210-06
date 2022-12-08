@@ -1,5 +1,3 @@
-import dice as d
-
 choice = 'done'
 
 class Choice:
