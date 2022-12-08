@@ -9,9 +9,10 @@ class Score:
     # player has the correct number of points to start the game
     first_turn == True
 
-    def __init__(turn, die_value):
-        if first_turn == True and die_value < 450:
+    def __init__(turn, die_value, player):
+        if first_turn == True and die_value <= 450:
             first_turn == True
+            total_score = score - 450
         else:
             # If they have the correct numebr of points to start they begin
             first_turn == False
@@ -19,7 +20,9 @@ class Score:
     # The term player is deciding if they call the player list or bot list
     def straight(die, player):
         for i in player:
+            # If the player has one of each number they get a straight
             if player == 1 and player == 2 and player == 3 and player == 4 and player == 5 and player == 6:
+                # If they get a straight they get 4000 points
                 points = 4000
         total_points += points
         return total_points
@@ -27,8 +30,11 @@ class Score:
     def three_of_a_kind(die, player):
         for i in player:
             for u in player:
+                # Check to see if the player has any pairs
                 if i == u:
+                    # Count the total number of pairs that the player has
                     pairs += 1
+                    # If they get three pairs they get 3000 points
                     if pairs == 3:
                         points = 3000
         total_points += points
