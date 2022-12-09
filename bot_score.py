@@ -1,5 +1,7 @@
 from score import Score
 
+s = Score()
+
 class bot_score(Score):
     """
     add points for the bot score
