@@ -1,4 +1,4 @@
-# cse210-02
+# cse210-06
 Team Project
 # Zilch - Dice Game
 Zilch is a dice roller game based on risk-reward principles below are how you are able to play.
