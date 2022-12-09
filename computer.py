@@ -1,4 +1,4 @@
-from player import Player as p
+from player_score import player_score as p
 
 p = p()
 
