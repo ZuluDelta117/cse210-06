@@ -7,15 +7,15 @@ class Score:
 
     # If it is the players first turn it will check if the
     # player has the correct number of points to start the game
-    first_turn == True
+    first_turn = True
 
     def __init__(turn, die_value, player):
-        if first_turn == True and die_value <= 450:
-            first_turn == True
-            total_score = score - 450
+        if Score.first_turn == True and die_value <= 450:
+            Score.first_turn == True
+            total_score = player.score - 450
         else:
             # If they have the correct numebr of points to start they begin
-            first_turn == False
+            Score.first_turn == False
 
     # The term player is deciding if they call the player list or bot list
     def straight(die, player):
