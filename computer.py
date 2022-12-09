@@ -6,8 +6,8 @@ class Computer:
     def __init__(self):
         self._base_risk = .5
         self._messages = ['Drat! I busted', 'Yay! I scored over 1000 points', 'Haha, you busted']
-        self._total_points = int(0)
-        self._round_points = int(0)
+        #self._total_points = int(0)
+        #self._round_points = int(0)
 
     def return_risk(self):
         return self._base_risk
@@ -15,11 +15,11 @@ class Computer:
     def return_message(self, num):
         return self._messages[num-1]
 
-    def return_total_points(self):
-        return self._total_points
+   # def return_total_points(self):
+    #    return self._total_points
 
-    def modify_total_points(self, value):
-        self._total_points =+ value
+    #def modify_total_points(self, value):
+     #   self._total_points =+ value
 
     def modify_risk(self, change):
         self._base_risk = self._base_risk * change
