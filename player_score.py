@@ -1,5 +1,7 @@
 from score import Score
 
+s = Score()
+
 class player_score(Score):
     """
     add points for the player score
