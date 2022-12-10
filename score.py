@@ -3,45 +3,48 @@ class Score:
     """
     Have the scoring possabilities 
     """
+    total_points = 0
+    die = ''
+    # If it is the d.kept_rollss first turn it will check if the
+    # d.kept_rolls has the correct number of points to start the game
+    # first_turn = True
 
-    # If it is the players first turn it will check if the
-    # player has the correct number of points to start the game
-    first_turn = True
+    # def entry(turn, score):
+    #     if Score.first_turn == True and score <= 450:
+    #         Score.first_turn == True
+    #         total_score = score - 450
+    #     else:
+    #         # If they have the correct numebr of points to start they begin
+    #         Score.first_turn == False
 
-    def entry(turn, score):
-        if Score.first_turn == True and score <= 450:
-            Score.first_turn == True
-            total_score = score - 450
-        else:
-            # If they have the correct numebr of points to start they begin
-            Score.first_turn == False
-
-    # The term player is deciding if they call the player list or bot list
-    def straight(die, player):
-        for i in player:
-            # If the player has one of each number they get a straight
-            if player == 1 and player == 2 and player == 3 and player == 4 and player == 5 and player == 6:
+    # The term d.kept_rolls is deciding if they call the d.kept_rolls list or bot list
+    def straight(total_points):
+        for i in d.kept_rolls:
+            # If the d.kept_rolls has one of each number they get a straight
+            if i == '1' and i == '2' and i == '3' and i == '4' and i == '5' and i == '6':
                 # If they get a straight they get 4000 points
                 points = 4000
-        total_points += points
+                total_points += points
         return total_points
 
-    def three_of_a_kind(die, player):
-        for i in player:
-            for u in player:
-                # Check to see if the player has any pairs
+    def three_of_a_kind(total_points):
+        pairs = 0
+        for i in d.kept_rolls:
+            for u in d.kept_rolls:
+                # Check to see if the d.kept_rolls has any pairs
                 if i == u:
-                    # Count the total number of pairs that the player has
+                    # Count the total number of pairs that the d.kept_rolls has
                     pairs += 1
                     # If they get three pairs they get 3000 points
                     if pairs == 3:
                         points = 3000
-        total_points += points
+                        total_points += points
         return total_points
 
-    def ones(die, player):
-        for i in player:
-            if player == 1:
+    def ones(total_points):
+        points = 0
+        for i in d.kept_rolls:
+            if i == '1':
                 # How many points they get for a single one
                 points += 100
                 # If they have three ones they get 1000 points
@@ -55,14 +58,15 @@ class Score:
                     points = 5500
                 # If they get six ones they get 7000 points
                 elif points == 600:
-                    # Player wins the game if they roll six ones
+                    # d.kept_rolls wins the game if they roll six ones
                     points = 10000
-        total_points += points
+                total_points += points
         return total_points
 
-    def fives(die, player):
-        for i in player:
-            if player == 5:
+    def fives(total_points):
+        points = 0
+        for i in d.kept_rolls:
+            if i == '5':
                 # How many points they get for a single five
                 points += 50
                 # If they have three fives they get 1500 points
@@ -77,17 +81,18 @@ class Score:
                 # If they get six fives they get 7000 points
                 elif points == 300:
                     points = 7000
-        total_points += points
+                total_points += points
         return total_points
 
-    def all_other_rolls(die, player):
-        for i in player:
-            if player == die and player != 1 and player != 5:
+    def all_other_rolls(total_points):
+        number_roled = 0
+        for i in d.kept_rolls:
+            if i != 1 and i != 5:
                 points = 0
                 number_roled += 1
                 # If they have three of a number they get it multilied by 100
                 if number_roled == 3:
-                    points = (die * number_roled) * 100
+                    points = 500
                 # If they get four of a number they get 1000 points
                 elif number_roled == 4:
                     points = 2000
@@ -97,6 +102,6 @@ class Score:
                 # If they get six of a number they get 7000 points
                 elif number_roled == 6:
                     points = 7000
-        total_points += points
+                total_points += points
         return total_points
 

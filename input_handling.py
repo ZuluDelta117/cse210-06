@@ -21,33 +21,35 @@ class Choice(Score):
         #Display the current rolls to the player
         print(f'Your roll looks like this {d.rolls}')
         #Allows the user to enter which dice #'s they want to keep, seperated by commas
-        keep_input = input('Which dice do you want to keep (comma seperated: (e.g 1,1,5)? ')
-        split_input = []
-        split_input.append(keep_input.split(','))
-        return split_input, [keep_input]
+        keep_input = input('Which dice do you want to keep? ')
+        d.kept_rolls.append(keep_input)
+        # return d.kept_rolls
+    #     return split_input, [keep_input]
 
-    def appending(split_input,keep_input):
-        #Adds the user's selection to the kept rolls list
-        #split_input_int = [int(item) for item in split_input]
-        for i in range(len(split_input)):
-            split_input[i] = int(split_input[i])
+    # def appending(split_input,keep_input):
+    #     #Adds the user's selection to the kept rolls list
+    #     #split_input_int = [int(item) for item in split_input]
+    #     for i in range(len(split_input)):
+    #         split_input[i] = int(split_input[i])
         
-        for die in range(len(split_input)):
-            d.kept_rolls.append(die)    
+    #     for die in range(len(split_input)):
+    #         d.kept_rolls.append(die)    
+    #         print(split_input[die])
+    #     #remove the selected dice from the current rolls
+    #     for i in range(len(split_input)):
+    #         d.kept_rolls.pop(split_input[i])
+            
+    #     print(d.kept_rolls)
+        # keep_input = input('Are you done? ')
+        # if keep_input == 'done':
+        #     return keep_input
+        # else:
+        #     pass
 
-        #remove the selected dice from the current rolls
-        for i in range(len(split_input)):
-            split_input[i].append(d.kept_rolls)
-        print(d.kept_rolls)
-        if input('Are you done? ') == 'done':
-            return d.kept_rolls
-        else:
-            pass
-
-    def removal(split_input):
-        for i in range(len(split_input)):
-                del d.rolls[i]
-        #This is where we would want to reroll the remaining die - JW
+    # def removal(split_input):
+    #     for i in range(len(split_input)):
+    #             del d.rolls[i]
+    #     #This is where we would want to reroll the remaining die - JW
 
         
     def show_updates(total_points):

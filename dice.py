@@ -15,14 +15,13 @@ calc_it = (6 - len(kept_rolls))
 
 class D:
     def roll(rolls,kept_rolls,choice):
-        rolls = []
+        rolls.clear()
         if len(kept_rolls) == 6:
             print('You have no more dice to roll.')
             choice = 'done'
         else:
             while len(rolls) < (6 - len(kept_rolls)):
                 rolls.append(r.randint(1,6))
-                print(rolls)
 
     
     def bot_roll(bot_rolls,bot_kept_rolls):
