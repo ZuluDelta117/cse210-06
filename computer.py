@@ -1,6 +1,5 @@
-from player_score import player_score as p
-
-p = p()
+from player_score import player_score as ps
+import dice as d
 
 class Computer:
     def __init__(self):
@@ -28,7 +27,7 @@ class Computer:
 
     def risk_control(self):
         # The Computer will raise/lower its risk based upon whether it is further ahead or further behind.
-        _player_points = p.get_player_total_points()
+        _player_points = ps.total_score(player=d.kept_rolls)
         if self._total_points - _player_points >= 2000:
             self.modify_risk(1.2)
         elif self._total_points - _player_points >= 1000:
