@@ -5,17 +5,7 @@ class Score:
     """
     total_points = 0
     die = ''
-    # If it is the d.kept_rollss first turn it will check if the
-    # d.kept_rolls has the correct number of points to start the game
-    # first_turn = True
-
-    # def entry(turn, score):
-    #     if Score.first_turn == True and score <= 450:
-    #         Score.first_turn == True
-    #         total_score = score - 450
-    #     else:
-    #         # If they have the correct numebr of points to start they begin
-    #         Score.first_turn == False
+  
 
     # The term d.kept_rolls is deciding if they call the d.kept_rolls list or bot list
     def straight(total_points):
