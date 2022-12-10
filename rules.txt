@@ -6,19 +6,8 @@ Player turns
 
 -Once the player "locks in" one die, the player can re-roll the remaining dice.
 
--If a player is able to lock in all their dice, they may re-roll all their dice.
+-Once the player chooses done they can see their score.
 
-Reading the Point Sheet
-
--With the multiple dice combinations, you must collect a combination on one roll/re-roll. For example,
-a player must roll 3 ones in one roll in order to get 1000 points. The player cannot collect 3 ones over
-several rolls to get 1000 points (the player only would earn 300 points because the ones are 100 points each).
-
--Straight is at least 4 numbers in consecutive order. For example, a player can roll a 1, 2, 3, 4 and the player has earned a 
-straight.
-
-Point System
-
-Earn as many points as you can and try to beat your highscore!
+-Earn as many points as you can and try to beat your highscore!
 
  
