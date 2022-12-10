@@ -1,5 +1,4 @@
 import dice as d
-
 class Score:
     """
     Have the scoring possabilities 
@@ -9,10 +8,10 @@ class Score:
     # player has the correct number of points to start the game
     first_turn = True
 
-    def __init__(turn, die_value, player):
-        if Score.first_turn == True and die_value <= 450:
+    def entry(turn, score):
+        if Score.first_turn == True and score <= 450:
             Score.first_turn == True
-            total_score = player.score - 450
+            total_score = score - 450
         else:
             # If they have the correct numebr of points to start they begin
             Score.first_turn == False

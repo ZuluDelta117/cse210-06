@@ -1,11 +1,9 @@
 from score import Score
 
-s = Score()
 
 class player_score(Score):
     """
     add points for the player score
     """
-    s = Score()
-    def total_score(score):
-        player_score = s.total_score
+    def total_score(total_score,player):
+        player_score = Score.total_score

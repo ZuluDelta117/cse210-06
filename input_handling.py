@@ -6,41 +6,47 @@ choice = 'done'
 
 #Assign the total rolls and kept rolls to lists in dice file
 
-class Choice(d, Score):
-    kept_rolls = d.kept_rolls
-    rolls = d.rolls
+class Choice(Score):
     
+    def __len__(self):
+        return len([])
 
     def die_selection(self):
 
         #Open the rules file and print it at the top of the terminal each time the user has the option to select dice
-        with open("rules.txt", "r", encoding="utf-8") as rules:
-            for line in rules:
-                print(line.strip())
+        # with open("rules.txt", "r", encoding="utf-8") as rules:
+        #     for line in rules:
+        #         print(line.strip())
 
         #Display the current rolls to the player
         print(f'Your roll looks like this {d.rolls}')
         #Allows the user to enter which dice #'s they want to keep, seperated by commas
         keep_input = input('Which dice do you want to keep (comma seperated: (e.g 1,1,5)? ')
-        split_input = keep_input.split(',')
+        split_input = []
+        split_input.append(keep_input.split(','))
+        return split_input, [keep_input]
 
+    def appending(split_input,keep_input):
         #Adds the user's selection to the kept rolls list
-        split_input_int = [int(item) for item in split_input]
-        for die in split_input_int:
-            d.kept_rolls.append(die)
-
-        #if the user types 'done' they will be finished selecting dice
-        if keep_input == 'done':
-            return d.kept_rolls
-        else:
-            print('Invalid input, please try again.')
+        #split_input_int = [int(item) for item in split_input]
+        for i in range(len(split_input)):
+            split_input[i] = int(split_input[i])
+        
+        for die in range(len(split_input)):
+            d.kept_rolls.append(die)    
 
         #remove the selected dice from the current rolls
-        for value in split_input_int:
-            if value in d.rolls:
-                d.rolls.remove(value)
-        return d.rolls
+        for i in range(len(split_input)):
+            split_input[i].append(d.kept_rolls)
+        print(d.kept_rolls)
+        if input('Are you done? ') == 'done':
+            return d.kept_rolls
+        else:
+            pass
 
+    def removal(split_input):
+        for i in range(len(split_input)):
+                del d.rolls[i]
         #This is where we would want to reroll the remaining die - JW
 
         
