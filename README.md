@@ -29,9 +29,8 @@ project folder. Select the main module inside the dice folder and click the "run
 The project files and folders are organized as follows:
 ```
 root                    (project root folder)
-+-- zilch               (source code for game)
-  +-- game              (specific classes)
-  +-- __main__.py       (program entry point)
++-- zilch.py               (program entry point)
++-- game              (specific classes)
 +-- README.md           (general info)
 ```
 
